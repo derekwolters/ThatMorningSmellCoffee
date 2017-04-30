@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,8 +13,8 @@ namespace ThatMorningSmellCoffee.Controllers
         private CoffeeAppDBEntities1 Db = new CoffeeAppDBEntities1();
         public ActionResult Index()
         {
-           var list = Db.Items.ToList();
-            return View(list);
+             var list = Db.Items.ToList();      
+             return View(list);
         }
 
         public ActionResult About()
@@ -30,4 +31,6 @@ namespace ThatMorningSmellCoffee.Controllers
             return View();
         }
     }
+
+
 }

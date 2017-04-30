@@ -123,5 +123,16 @@ namespace ThatMorningSmellCoffee.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // sourcehttp://hasibulhaque.com/2013/08/06/how-to-perform-search-or-filter-from-collection-of-data-using-asp-net-mv/
+        [HttpPost]
+        public ActionResult Filter(string filterText)
+        {
+            var items = new CoffeeAppDBEntities1().Items.Where(p =>
+                    p.Name.Contains(filterText)
+                || p.Description.Contains(filterText)
+                ).ToList();
+            return PartialView("_items", items);
+        }
     }
 }
