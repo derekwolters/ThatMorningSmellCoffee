@@ -11,13 +11,34 @@ namespace ThatMorningSmellCoffee.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
+        [Required(ErrorMessage = "First Name is Required")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "Last Name is Required")]
         public string LastName { get; set; }
+        [Required(ErrorMessage = "Email is Required")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                            @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
+                            ErrorMessage = "Email is not valid")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Phone is Required")]
+        //7 or 10 digit number, with extensions allowed, delimiters are spaces, dashes, or periods
+        [RegularExpression(@"^ (?: (?:\+? 1\s * (?:[.-]\s *)?)?(?:\(\s*([2-9]1[02-9]|[2-9]" + 
+                            @"[02-8]1|[2-9]" +
+                            @"[02-8]" +
+                            @"[02-9])\s*\)|([2-9]1[02-9]|[2-9]" +
+                            @"[02-8]1|[2-9]" +
+                            @"[02-8]" +
+                            @"[02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9]" +
+                            @"[02-9]1|[2-9]" +
+                            @"[02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$",
+                            ErrorMessage = "Phone is not valid")]
         public string Phone { get; set; }
+        [Required(ErrorMessage = "Sun or Moon is Required")]
         public string SunMoon { get; set; }
         public int id { get; set; }
     }

@@ -11,13 +11,19 @@ namespace ThatMorningSmellCoffee.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Item
-    {
+    {        
         public int id { get; set; }
+
+        [Required(ErrorMessage = "Name is Required")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Description is Required")]
         public string Description { get; set; }
+        [Required(ErrorMessage = "Quantity is Required")]
         public short Quantity { get; set; }
+        [Required(ErrorMessage = "Price is Required")]
         public Nullable<double> Price { get; set; }
     }
 }
