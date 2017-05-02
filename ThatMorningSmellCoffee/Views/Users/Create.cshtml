@@ -48,9 +48,12 @@
         </div>
 
         <div class="form-group">
+            
             @Html.LabelFor(model => model.SunMoon, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SunMoon, new { htmlAttributes = new { @class = "form-control" } })
+                <!--@Html.EditorFor(model => model.SunMoon, new { htmlAttributes = new { @class = "form-control" } })-->
+                Sun:   @Html.RadioButtonFor(model => model.SunMoon, "Sun")<br>
+                Moon: @Html.RadioButtonFor(model => model.SunMoon, "Moon")
                 @Html.ValidationMessageFor(model => model.SunMoon, "", new { @class = "text-danger" })
             </div>
         </div>
