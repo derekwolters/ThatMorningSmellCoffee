@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.landing {
+    text-align: center;
+    margin-top: 10px;
+
+}

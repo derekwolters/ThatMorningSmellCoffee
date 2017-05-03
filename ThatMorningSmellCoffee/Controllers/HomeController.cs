@@ -8,6 +8,7 @@ using ThatMorningSmellCoffee.Models;
 
 namespace ThatMorningSmellCoffee.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private CoffeeAppDBEntities1 Db = new CoffeeAppDBEntities1();
@@ -28,6 +29,11 @@ namespace ThatMorningSmellCoffee.Controllers
         {
             ViewBag.Message = "It's a trap!";
 
+            return View();
+        }
+
+        public ActionResult Landing()
+        {
             return View();
         }
     }

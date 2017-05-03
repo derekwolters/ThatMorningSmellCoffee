@@ -17,8 +17,12 @@ namespace ThatMorningSmellCoffee.Models
     {
         [Required(ErrorMessage = "First Name is Required")]
         public string FirstName { get; set; }
+
+
         [Required(ErrorMessage = "Last Name is Required")]
         public string LastName { get; set; }
+
+
         [Required(ErrorMessage = "Email is Required")]
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                             @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +

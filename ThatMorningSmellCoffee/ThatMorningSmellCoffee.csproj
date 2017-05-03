@@ -320,6 +320,7 @@
     <Content Include="Views\Items\Index.cshtml" />
     <Content Include="Views\Shared\Success.cshtml" />
     <Content Include="Views\Shared\_items.cshtml" />
+    <Content Include="Views\Home\Landing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
